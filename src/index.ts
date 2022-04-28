@@ -1,23 +1,46 @@
 import { el } from 'redom'
+import { marked } from 'marked'
 import { FileReader } from './file-reader'
 
 const app = document.querySelector('#app')!
 
 async function main() {
   const reader = new FileReader()
-  const textarea = el('textarea', {
-    onchange: () => reader
-      .save(textarea.value)
+
+  const openFile = el('div', {
+    className: 'open-file',
+    onclick: () => {
+      reader
+        .open()
+        .then((file) => {
+          textarea.value = file
+          preview.innerHTML = marked(file)
+          openFile.classList.add('hide')
+        })
+    }
   })
 
-  const openButton = el('button', {
-    onclick: () => reader
-      .read()
-      .then((v) => textarea.value = v.content)
-  }, 'Open file')
+  const editor = el('div', {
+    className: 'editor'
+  })
 
-  app.appendChild(openButton)
-  app.appendChild(textarea)
+  const preview = el('div', {
+    className: 'preview'
+  })
+
+  const textarea = el('textarea', {
+    oninput: () => {
+      const text = textarea.value
+      reader
+        .save(text)
+        .then(() => preview.innerHTML = marked(text))
+    }
+  })
+
+  app.appendChild(openFile)
+  editor.appendChild(textarea)
+  editor.appendChild(preview)
+  app.appendChild(editor)
 }
 
 main()

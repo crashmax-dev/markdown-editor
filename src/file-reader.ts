@@ -4,38 +4,35 @@ export class FileReader {
 
   constructor() {
     this.options = {
-      multiple: true,
+      multiple: false,
       types: [
         {
-          description: 'Text',
+          description: 'Markdown',
           accept: {
-            'text/plain': ['.txt', '.md']
+            'text/plain': ['.md']
           }
         }
       ]
     }
   }
 
-  get handler() {
+  get handlers(): FileSystemFileHandle {
     return this.fileHandler
   }
 
-  async read() {
-    const [fileHandle] = await showOpenFilePicker(this.options)
+  async open(): Promise<string> {
+    const [fileHandler] = await showOpenFilePicker(this.options)
+    await fileHandler.requestPermission({ mode: 'readwrite' })
+    this.fileHandler = fileHandler
 
-    const file = await fileHandle.getFile()
-    const content = await file.text()
-    this.fileHandler = fileHandle
-
-    return {
-      fileHandle,
-      content
-    }
+    const file = await fileHandler.getFile()
+    const text = await file.text()
+    return text
   }
 
-  async save(value: string) {
+  async save(data: string): Promise<void> {
     const writable = await this.fileHandler.createWritable()
-    await writable.write(value)
+    await writable.write(data)
     await writable.close()
   }
 }
