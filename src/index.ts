@@ -34,6 +34,12 @@ async function main() {
       reader
         .save(text)
         .then(() => preview.innerHTML = marked(text))
+    },
+    onkeydown: (event: KeyboardEvent) => {
+      if (event.key == 'Tab') {
+        event.preventDefault()
+        document.execCommand('insertText', false, '  ')
+      }
     }
   })
 
