@@ -40,6 +40,9 @@ async function main() {
         event.preventDefault()
         document.execCommand('insertText', false, '  ')
       }
+    },
+    onscroll: () => {
+      preview.scrollTop = textarea.scrollTop
     }
   })
 
