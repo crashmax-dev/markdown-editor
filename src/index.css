@@ -28,6 +28,55 @@ body {
   color: #d4d4d4;
   width: 100%;
   padding: 6px;
+  overflow-x: hidden;
+}
+
+.preview h1,
+.preview h2,
+.preview h3,
+.preview h4,
+.preview h5,
+.preview h6 {
+  margin-top: 24px;
+  margin-bottom: 16px;
+  font-weight: 600;
+  line-height: 1.25;
+  border-bottom: 1px solid #333;
+  padding-bottom: 0.3em;
+}
+
+.preview a {
+  color: #0969da;
+  text-decoration: none;
+}
+
+.preview a:hover {
+  text-decoration: underline;
+}
+
+.preview pre {
+  padding: 4px;
+  overflow: auto;
+  line-height: 1.45;
+  background-color: #1e1e1e;
+}
+
+.preview table {
+  display: block;
+  width: 100%;
+  width: max-content;
+  max-width: 100%;
+  overflow: auto;
+}
+
+.preview table tr {
+  background-color: #1e1e1e;
+  border-top: 1px solid #333;
+}
+
+.preview p {
+  margin-top: 0;
+  margin-bottom: 16px;
 }
 
 .open-file {
