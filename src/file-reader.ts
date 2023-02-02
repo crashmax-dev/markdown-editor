@@ -1,19 +1,15 @@
 export class FileReader {
   private fileHandler: FileSystemFileHandle
-  private options: OpenFilePickerOptions
-
-  constructor() {
-    this.options = {
-      multiple: false,
-      types: [
-        {
-          description: 'Markdown',
-          accept: {
-            'text/plain': ['.md']
-          }
+  private options: OpenFilePickerOptions = {
+    multiple: false,
+    types: [
+      {
+        description: 'Markdown',
+        accept: {
+          'text/plain': ['.md']
         }
-      ]
-    }
+      }
+    ]
   }
 
   get handlers(): FileSystemFileHandle {

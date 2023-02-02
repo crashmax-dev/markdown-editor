@@ -1,17 +1,17 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@crashmax/prettier-config': ^2.2.1
+  '@crashmax/prettier-config': 2.2.1
   '@types/marked': 4.0.8
   '@types/wicg-file-system-access': 2020.9.5
+  '@zero-dependency/dom': 0.12.0
   marked: 4.2.12
-  redom: 3.29.1
   typescript: 4.9.5
-  vite: ^4.1.1
+  vite: 4.1.1
 
 dependencies:
+  '@zero-dependency/dom': 0.12.0
   marked: 4.2.12
-  redom: 3.29.1
 
 devDependencies:
   '@crashmax/prettier-config': 2.2.1_za6dmrbiogn3z6m2plsv3qsi6m
@@ -508,6 +508,16 @@ packages:
     resolution: {integrity: sha512-UYK244awtmcUYQfs7FR8710MJcefL2WvkyHMjA8yJzxd1mo0Gfn88sRZ1Bls7hiUhA2w7ne1gpJ9T5g3G0wOyA==}
     dev: true
 
+  /@zero-dependency/dom/0.12.0:
+    resolution: {integrity: sha512-afswu8W+/+ELG+YHii6M475Cbkn4bmsWrdHZcU+8EibOzQSx8xk6nWco0vV2F0iTcEFsaa1QBn9NTS4K6i4Y1g==}
+    dependencies:
+      '@zero-dependency/emitter': 1.1.1
+    dev: false
+
+  /@zero-dependency/emitter/1.1.1:
+    resolution: {integrity: sha512-bPF9QeEQdOhe1Bfpm+mqOS4JrajPiHTj5vMvOSMvZp5jZzzgd8lC87JL93xWGgL8Qb3E98JZkmnYJX3JdmrEIA==}
+    dev: false
+
   /ansi-styles/3.2.1:
     resolution: {integrity: sha512-VT0ZI6kZRdTh8YyJw3SMbYm/u+NqfsAxEpWO0Pf9sq8/e94WxxOpPKx9FR1FlyCtOVDNOQ+8ntlqFxiRc+r5qA==}
     engines: {node: '>=4'}
@@ -731,10 +741,6 @@ packages:
     engines: {node: '>=10.13.0'}
     hasBin: true
     dev: true
-
-  /redom/3.29.1:
-    resolution: {integrity: sha512-hEQEcPGRj4W2UT4IIBsNw29zMNV6vtXQ8ttitQ+Uc5XpdQ7i8d5VgKfm6fPmYbbApKXa98dUoEzDgk1oqXVlMg==}
-    dev: false
 
   /resolve/1.22.1:
     resolution: {integrity: sha512-nBpuuYuY5jFsli/JIs1oldw6fOQCBioohqWZg/2hiaOybXOft4lonv85uDOKXdf8rhyK159cxU5cDcK/NKk8zw==}
