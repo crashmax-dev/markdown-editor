@@ -1,20 +1,20 @@
 {
-  "name": "parcel-template",
+  "name": "markdown-editor",
   "version": "1.0.0",
-  "source": "src/index.html",
   "scripts": {
-    "start": "parcel --no-cache",
-    "build": "parcel build --public-url ."
+    "dev": "vite",
+    "build": "vite build",
+    "format": "prettier --write --ignore-unknown **"
   },
   "devDependencies": {
-    "@types/marked": "^4.0.3",
-    "@types/wicg-file-system-access": "^2020.9.5",
-    "parcel": "^2.4.1",
-    "parcel-reporter-clean-dist": "^1.0.4",
-    "typescript": "^4.6.3"
+    "@crashmax/prettier-config": "^2.2.1",
+    "@types/marked": "4.0.8",
+    "@types/wicg-file-system-access": "2020.9.5",
+    "typescript": "4.9.5",
+    "vite": "^4.1.1"
   },
   "dependencies": {
-    "marked": "^4.0.14",
-    "redom": "^3.27.3"
+    "marked": "4.2.12",
+    "redom": "3.29.1"
   }
 }
